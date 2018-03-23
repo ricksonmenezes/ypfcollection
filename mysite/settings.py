@@ -104,7 +104,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'ypfcollection',                      # Or path to database file if using 
+        'NAME': 'rickson$ypfcollection',                      # Or path to database file if using 
         # The following settings are not used with sqlite3:
         'USER': 'rickson',
         'PASSWORD': 'drowning',
