@@ -1,0 +1,10 @@
+ {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/ypf/create-match" method="get">
+{% csrf_token %}
+<input type="submit" value="Create Match" /><br>
+</form>
+<form action="/ypf/collect-payments" method="get">
+{% csrf_token %}
+<input type="submit" value="Collect Payments" /><br>
+</form>

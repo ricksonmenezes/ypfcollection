@@ -1,0 +1,25 @@
+  {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/ypf/create-match" method="post">
+{% csrf_token %}
+
+    
+<h3>Baby this is is storm house</h3>
+<div>Enter Match Fee: <input name="matchfee" type ="text"/></div>
+<ul>
+    {% for person in player %}
+        <input name="player{{ person.id }}" type="checkbox" value="{{ person.id }}" > {{ person.name }}<br>
+    {% endfor %}
+    </ul>
+
+<input type="submit" value="Create Match" />
+</form> 
+<!-- {% if player %}
+    <ul>
+    {% for person in player %}
+        <input type="checkbox" value="{{ person.id }}" > {{ person.name }}<br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No players are available.</p>
+{% endif %} -->

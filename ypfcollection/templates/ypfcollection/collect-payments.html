@@ -1,0 +1,44 @@
+{% load static %}
+{% load app_filters  %}
+ <!doctype html> 
+ {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<html>
+  <head>
+    <meta charset="utf-8">
+	</head>
+  <body>
+<form id="form" action="/ypf/collect-payments" method="post">
+{% csrf_token %}
+
+    
+<h3>Collect money. </h3>
+<h5>Match Fee: <span id="matchamttotal">{{ match.amount }}</span> </h5>
+<h4>Fee per person: <span id="matchamt">{% fee_per_person match.amount player|length %}</span> </h4>
+<table>
+<tr>
+    <td>Name</td><td>Amount</td><td>Credit</td>
+	</tr>
+    {% for person in player %}
+   <tr> <td>{{ person.name }}</td><td><input id="paidamt{{ person.id }}" name="paidamt{{ person.id }}" type="text" /></td><td><input id="creditamt{{person.id}}" name="creditamt{{person.id}}"  readonly="readonly"  value="{{ person.amount }}" /></td></tr>
+    {% endfor %}
+	
+    </table>
+
+<input id="btnSubmit" type="submit" value="Save" />
+</form> 
+<!-- {% if player %}
+    <ul>
+    {% for person in player %}
+        <input type="checkbox" value="{{ person.id }}" > {{ person.name }}<br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No players are available.</p>
+
+{% endif %} -->
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="{% static  'ypfcollection/js/app.js' %}" ></script>
+    
+  </body>
+</html>
