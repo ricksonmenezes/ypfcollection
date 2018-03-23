@@ -104,11 +104,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'polls',                      # Or path to database file if using 
+        'NAME': 'ypfcollection',                      # Or path to database file if using 
         # The following settings are not used with sqlite3:
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or   '127.0.0.1' for localhost through TCP.
+        'USER': 'rickson',
+        'PASSWORD': 'drowning',
+        'HOST': 'rickson.mysql.pythonanywhere-services.com',                      # Empty for localhost through domain sockets or   '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
 }
